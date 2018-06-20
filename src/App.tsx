@@ -1,24 +1,20 @@
 import * as React from "react";
-import { Section, Container, Header } from "./Components";
-import { Examples } from "./ExamplesNavigator";
-import { UsingLinks, UsingActions } from "./examples/ActionableItemsExample";
+
+import * as protoTypes from "./namespace";
 
 class App extends React.Component {
   public render() {
+
+    const ABCollider = new protoTypes.A_B.Collider();
+    ABCollider.setName("a/b");
+    console.log("test package A.B: ", ABCollider);
+
+    const CDCollider = new protoTypes.C_D.Collider();
+    CDCollider.setName("c/d");
+    console.log("test package C.D: ", CDCollider);
+
     return (
-      <Section>
-        <Container>
-          <Header size={1}>
-            <a href="https://realfiction.net">Frank's</a> Typescript playground
-          </Header>
-          <Examples
-            items={[
-              { description: "Items as Links", component: UsingLinks },
-              { description: "Items as Actions", component: UsingActions }
-            ]}
-          />
-        </Container>
-      </Section>
+      <h3>check the console</h3>
     );
   }
 }

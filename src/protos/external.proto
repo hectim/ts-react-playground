@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package C.D;
+
+message Collider {
+  string name = 1;
+}

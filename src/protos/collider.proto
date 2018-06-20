@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package A.B;
+
+service Service1 {
+  rpc Collide(Collider) returns (Collider){}
+}
+message Collider {
+  string name = 1;
+}

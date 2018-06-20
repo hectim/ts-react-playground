@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/google-protobuf": "^3.2.7",
     "bulma": "^0.7.1",
     "classnames": "^2.2.6",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "2.16.0",
+    "ts-protoc-gen": "^0.7.3"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "protoc": "protoc --plugin='protoc-gen-ts=./node_modules/.bin/protoc-gen-ts' --js_out=import_style=commonjs,binary:. --ts_out=. src/protos/*.proto",
+    "protoc-clean": "rm -rf src/protos/*.d.ts && rm -rf src/protos/*.js"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.4",

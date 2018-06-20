@@ -1,18 +1,22 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "interface-name": [true, "never-prefix"],
+    "interface-name": [false, "never-prefix"],
+    "prefer-const": false,
     "object-literal-sort-keys": false,
     "jsx-boolean-value": false,
     "ordered-imports": false,
     "max-classes-per-file": false,
     "member-access": false,
-    "curly": false
+    "curly": false,
+    "no-console": false,
+    "variable-name": [false]
   },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
-      "node_modules/**/*.ts"
+      "node_modules/**/*.ts",
+      "src/protos/*"
     ]
   }
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package A.B;
+
+import "src/protos/external.proto";
+
+service Service2 {
+  rpc Collide(ChildCollision) returns (ChildCollision){}
+}
+
+message ChildCollision {
+  C.D.Collider oops = 1;
+}
